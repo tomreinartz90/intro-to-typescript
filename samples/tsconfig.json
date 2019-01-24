@@ -1,7 +1,9 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "experimentalDecorators": true
+        "experimentalDecorators": true,
+        "outDir": "dist",
+        "sourceMap": true
     },
     "files": [
         "index.ts"
@@ -9,4 +11,5 @@
     "exclude": [
         "node_modules"
     ]
+
 }

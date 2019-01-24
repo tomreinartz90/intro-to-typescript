@@ -1,4 +1,4 @@
-var objectWithIdentifier: { id: number } = { id: 1 };
+let objectWithIdentifier: { id: number } = { id: 1 };
 //objectWithIdentifier.foo = 'x';
 //objectWithIdentifier.id = '5';
 
@@ -10,12 +10,11 @@ interface IHaveOneToo {
     id: number;
 }
 
-var myObject: IHaveOneToo = { id: 1 };
+let myObject: IHaveOneToo = { id: 1 };
+// myObject.foo = 'x';
+// myObject.desc = 'description';
 
-//myObject.foo = 'x';
-//myObject.desc = 'description';
-
-var myObjectToo: IHaveAnIdentifier = myObject;
+let myObjectToo: IHaveAnIdentifier = myObject;
 
 function showId(obj: IHaveAnIdentifier): void {
     console.log(`Showing id: ${obj.id}`);
@@ -39,7 +38,7 @@ function showDesc(obj: IHaveAnOptionalDescription): void {
     }
 }
 
-var myObjectWithDescription: IHaveIdAndMaybeDescription = {
+let myObjectWithDescription: IHaveIdAndMaybeDescription = {
     id: 1974,
     desc: "Rock it!"
 };
@@ -53,31 +52,12 @@ interface IXnPlusOne {
 }
 
 // I am the implementation of the function: x(n+1) = r * xn * (1.0 - xn);
-var bifurcation: IXnPlusOne = function (r, x) {
+let bifurcation: IXnPlusOne = (r, x) => {
     return r * x * (1.0 - x);
 }
 
-var r: number = 3, x: number = 0.5, idx: number = 0;
-for (idx = 0; idx < 10; idx += 1) {
-    x = bifurcation(r, x);
-    console.log(`bifurcation value: ${x}`);
-}
-
-// now I can be a function AND an object with ap property!
-interface IXnPlusOneWithCounter extends IXnPlusOne {
-    counter: number;
-}
-
-// implement to keep track of things 
-var bifurcWithCnt: IXnPlusOneWithCounter = <IXnPlusOneWithCounter>function (r, x) {
-    bifurcWithCnt.counter += 1;
-    return r * x * (1.0 - x);
-}
-
-bifurcWithCnt.counter = 0;
-
-var r: number = 3.1, x: number = 0.5, idx: number = 0;
-for (idx = 0; idx < 10; idx += 1) {
-    x = bifurcWithCnt(r, x);
-    console.log(`count ${bifurcWithCnt.counter} = ${x}`);
+let r2: number = 3, x2: number = 0.5, idx2: number = 0;
+for (idx2 = 0; idx2 < 10; idx2 += 1) {
+    x2 = bifurcation(r2, x2);
+    console.log(`bifurcation value: ${x2}`);
 }

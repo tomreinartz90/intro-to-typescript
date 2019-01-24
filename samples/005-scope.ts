@@ -1,6 +1,6 @@
-// let vs var
+// let vs let
 // also: use ES6 for contrast 
-var app = () => {
+let app = () => {
 
     var withVar = () => {
         for (var idx: number = 0; idx < 10; idx += 1) {
@@ -8,7 +8,7 @@ var app = () => {
         }
     }
 
-    var withLet = () => {
+    let withLet = () => {
         for (let idx: number = 0; idx < 10; idx += 1) {
             setTimeout(() => console.log(`let idx = ${idx}`), 0);
         }
@@ -17,6 +17,7 @@ var app = () => {
     withVar();
     withLet();
 }
+
 setTimeout(app, 0);
 
 const maxRows = 1000;

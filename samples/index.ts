@@ -5,8 +5,7 @@
 /// <reference path="./005-scope.ts"/>
 /// <reference path="./006-complex.ts"/>
 /// <reference path="./007-generics.ts"/>
-/// <reference path="./008-decorators.ts"/>
-/// <reference path="./009-advanced.ts"/>
+/// <reference path="./008-advanced.ts"/>
 class DoesNothing {
 
 }

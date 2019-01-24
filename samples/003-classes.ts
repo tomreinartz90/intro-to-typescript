@@ -1,4 +1,3 @@
-// This should be compiled with ES6 as well for contrast
 
 // I have a name and a save method 
 interface INgController {
@@ -26,37 +25,37 @@ class Controller implements INgController {
     }
 }
 
-// function debugController(ctrl: Controller): void {
-//     console.log(`controller: ${ctrl.ctrlName}`);
-//     ctrl.save([{ key: "foo", value: 1 }, { key: "bar", value: 2 }]);
-// }
+function debugController(ctrl: Controller): void {
+    console.log(`controller: ${ctrl.ctrlName}`);
+    ctrl.save([{ key: "foo", value: 1 }, { key: "bar", value: 2 }]);
+}
 
-// var myCtrl = new Controller(5);
-// debugController(myCtrl);
+let myCtrl = new Controller(5);
+debugController(myCtrl);
 
-// // think of modules as "namespaces" to protect functions and privatize methods/information
-// module MyModule {
-//     class InternalClass {
-//         internal(): string {
-//             return 'Internal';
-//         }
-//     }
+// think of modules as "namespaces" to protect functions and privatize methods/information
+module MyModule {
+    class InternalClass {
+        internal(): string {
+            return 'Internal';
+        }
+    }
 
-//     export class MyClass {
-//         echo(msg: string): string {
-//             return msg;
-//         }
-//     }
+    export class MyClass {
+        echo(msg: string): string {
+            return msg;
+        }
+    }
 
-//     var internalClass = new InternalClass();
-//     console.log(`calling internalClass.internal: ${internalClass.internal()}`);
+    let internalClass = new InternalClass();
+    console.log(`calling internalClass.internal: ${internalClass.internal()}`);
 
-//     var myClass = new MyClass();
-//     console.log(`calling myClass.echo: ${myClass.echo("echo this!")}`);
+    let myClass = new MyClass();
+    console.log(`calling myClass.echo: ${myClass.echo("echo this!")}`);
 
-// }
+}
 
-// var exportedClass = new MyModule.MyClass();
-// console.log(`calling exportedClass.echo: ${exportedClass.echo("Outside!")}`);
+let exportedClass = new MyModule.MyClass();
+console.log(`calling exportedClass.echo: ${exportedClass.echo("Outside!")}`);
 
-// //var notExportedClass = new MyModule.internalClass();
+//var notExportedClass = new MyModule.internalClass();
